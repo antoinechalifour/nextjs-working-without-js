@@ -1,6 +1,6 @@
 import Cookies from "cookies";
 
-export default function (req, res) {
+export default function login(req, res) {
   const { email, password } = req.body;
   console.log(req.body);
 

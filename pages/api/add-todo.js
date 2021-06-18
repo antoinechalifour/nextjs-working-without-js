@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { saveTodo } from "../../src/server/todoRepository";
 
-export default function (req, res) {
+export default function addTodo(req, res) {
   const { todo: text } = req.body;
 
   saveTodo({

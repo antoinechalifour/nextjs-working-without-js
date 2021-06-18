@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 import { AddTodoForm } from "../src/components/AddTodoForm";
 import { TodoList } from "../src/components/TodoList";
 import { protect } from "../src/server/authentication";
 import { allTodos } from "../src/server/todoRepository";
 
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
 
 export default function Home({ todos }) {
   return (
