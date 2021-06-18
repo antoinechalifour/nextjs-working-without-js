@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 1rem;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: .5;
+}

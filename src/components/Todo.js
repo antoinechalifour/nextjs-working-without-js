@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect, useLayoutEffect, useState } from "react";
 
+import styles from "../../styles/Todo.module.css";
+
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -24,24 +26,23 @@ export function Todo({ id, text, completed }) {
   };
 
   return (
-    <span>
-      <form action={`/api/todos/${id}/state?redirect`} method="post">
-        <label
-          htmlFor={id}
-          style={{ textDecoration: completed ? "strikethrough" : "none" }}
-        >
-          {text}
-        </label>
-        <input
-          name={id}
-          id={id}
-          type="checkbox"
-          defaultChecked={completed}
-          onChange={handleChange}
-        />
+    <form
+      action={`/api/todos/${id}/state?redirect`}
+      method="post"
+      className={styles.container}
+    >
+      <label htmlFor={id} className={completed ? styles.completed : ""}>
+        {text}
+      </label>
+      <input
+        name={id}
+        id={id}
+        type="checkbox"
+        defaultChecked={completed}
+        onChange={handleChange}
+      />
 
-        {showSubmit && <button type="submit">Save</button>}
-      </form>
-    </span>
+      {showSubmit && <button type="submit">Save</button>}
+    </form>
   );
 }

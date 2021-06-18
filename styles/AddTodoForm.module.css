@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 1rem;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.container input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddf;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container button {
+  padding: 0.5rem 2rem;
+  background: dodgerblue;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  align-self: end;
+}

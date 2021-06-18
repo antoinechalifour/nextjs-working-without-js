@@ -3,9 +3,11 @@ import { TodoList } from "../src/components/TodoList";
 import { protect } from "../src/server/authentication";
 import { allTodos } from "../src/server/todoRepository";
 
+import styles from '../styles/Home.module.css'
+
 export default function Home({ todos }) {
   return (
-    <main>
+    <main className={styles.container}>
       <nav>
         <a href="/api/logout">Logout</a>
       </nav>
