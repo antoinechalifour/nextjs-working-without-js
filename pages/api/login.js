@@ -1,14 +1,16 @@
-import Cookies from 'cookies'
+import Cookies from "cookies";
 
 export default function (req, res) {
-    const { email, password } = req.body
+  const { email, password } = req.body;
+  console.log(req.body);
 
-    if (email === 'antoine.chalifour@gmail.com' && password === '1234') {
-        const cookies = new Cookies(req, res)
-        cookies.set('auth', 'ok')
-        
-        return res.redirect(302, '/')
-    }
+  if (email === "antoine.chalifour@gmail.com" && password === "1234") {
+    const cookies = new Cookies(req, res);
+    cookies.set("auth", "ok");
 
-    return res.redirect('/login?invalid_credentials')
+    if (req.query.redirect) return res.redirect(302, "/");
+    else return res.json({ location: "/" });
+  }
+
+  return res.redirect(302, "/login?invalid_credentials");
 }

@@ -1,14 +1,15 @@
-import { v4 as uuid } from 'uuid'
-import { saveTodo } from '../../src/server/todoRepository'
+import { v4 as uuid } from "uuid";
+import { saveTodo } from "../../src/server/todoRepository";
 
 export default function (req, res) {
-    const { todo: text } = req.body
+  const { todo: text } = req.body;
 
-    saveTodo({
-        id: uuid(),
-        text,
-        completed: false
-    })
+  saveTodo({
+    id: uuid(),
+    text,
+    completed: false,
+  });
 
-    res.redirect(302, '/')
+  if (req.query.redirect) res.redirect(302, "/");
+  else res.json({ location: "/" });
 }
