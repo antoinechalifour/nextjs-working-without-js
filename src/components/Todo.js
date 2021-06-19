@@ -40,6 +40,7 @@ export const Todo = ({ id, text, completed }) => {
         <label htmlFor={id} className={completed ? styles.completed : ""}>
           {text}
         </label>
+
         <input
           name={id}
           id={id}
@@ -48,7 +49,15 @@ export const Todo = ({ id, text, completed }) => {
           onChange={handleChange}
         />
 
-        {showSubmit && <button type="submit">Save</button>}
+        {showSubmit && (
+          <button
+            type="submit"
+            aria-label="Valider les changements"
+            title="Valider les changements"
+          >
+            ✔️
+          </button>
+        )}
       </form>
 
       <ArchiveTodoButton id={id} />
