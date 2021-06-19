@@ -26,7 +26,7 @@ export const LoginForm = () => {
   return (
     <form
       className="card page-content form-group"
-      action="/api/login?redirect"
+      action="/api/login?redirect=true"
       method="post"
       onSubmit={handleSubmit}
     >
