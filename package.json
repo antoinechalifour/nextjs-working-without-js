@@ -11,10 +11,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cookies": "^0.8.0",
+    "knex": "^0.95.6",
     "next": "11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "reset.css": "^2.0.2",
+    "sqlite3": "^5.0.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

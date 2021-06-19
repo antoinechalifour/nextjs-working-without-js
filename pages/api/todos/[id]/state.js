@@ -1,4 +1,4 @@
-import { saveTodo, todoOfId } from "../../../../src/server/todoRepository";
+import { saveTodo, todoOfId } from "../../../../src/server/todoSqliteRepository";
 
 export default async function toggleTodoState(req, res) {
   const { id } = req.query;

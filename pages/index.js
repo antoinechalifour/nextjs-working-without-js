@@ -3,7 +3,7 @@
 import { AddTodoForm } from "../src/components/AddTodoForm";
 import { TodoList } from "../src/components/TodoList";
 import { protect } from "../src/server/authentication";
-import { allTodos } from "../src/server/todoRepository";
+import { allTodos } from "../src/server/todoSqliteRepository";
 
 import styles from "../styles/Home.module.css";
 
