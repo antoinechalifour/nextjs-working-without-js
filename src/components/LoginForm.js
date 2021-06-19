@@ -18,7 +18,7 @@ export const LoginForm = ({ isFailed }) => (
     <FormInput label="Password" type="Password" name="password" />
 
     <div>
-      <button className="block" type="submit">
+      <button className="button block" type="submit">
         Login
       </button>
     </div>

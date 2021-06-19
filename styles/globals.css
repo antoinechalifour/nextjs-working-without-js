@@ -36,7 +36,7 @@ body {
   grid-gap: 2rem;
 }
 
-button {
+.button {
   padding: 0.5rem 2rem;
   background: dodgerblue;
   border: none;

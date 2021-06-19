@@ -1,11 +1,16 @@
 import { knex } from "./knex";
 
-export async function saveTodo(todo) {
-  await knex("todos").insert(todo).onConflict('id').merge();
+export function saveTodo(todo) {
+  return knex("todos").insert(todo).onConflict('id').merge();
 }
 
 export async function allTodos() {
-  return knex.select("*").from("todos");
+  const todos = await  knex.select("*").from("todos")
+
+  return todos.map(todo => ({
+    ...todo,
+    completed: !!todo.completed
+  }));
 }
 
 export async function todoOfId(id) {
@@ -13,5 +18,12 @@ export async function todoOfId(id) {
 
   if (!todo) throw new Error(`Todo of ID ${id} not found`);
 
-  return todo;
+  return {
+    ...todo,
+    completed: !!todo.completed
+  };
+}
+
+export function deleteTodo(id) {
+  return knex('todos').where({ id }).delete()
 }

@@ -1,22 +1,18 @@
-import { useRouter } from "next/router";
-
 import { FormInput } from "./FormInput";
 import styles from "./AddTodoForm.module.css";
+import { refresh } from "../utils";
 
 const useAddTodoForm = () => {
-  const router = useRouter();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const res = await fetch("/api/todos", {
+    await fetch("/api/todos", {
       method: "POST",
       body: new URLSearchParams(formData),
     });
-    const body = await res.json();
 
-    await router.replace(body.location);
+    await refresh();
     e.target.reset();
   };
 
@@ -40,7 +36,7 @@ export const AddTodoForm = () => {
         placeholder="Buy some bread..."
       />
 
-      <button type="submit">Add</button>
+      <button className="button" type="submit">Add</button>
     </form>
   );
 };
