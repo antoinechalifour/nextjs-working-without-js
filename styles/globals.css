@@ -53,3 +53,17 @@ button {
   display: block;
   width: 100%;
 }
+
+.alert {
+  padding: 1.5rem 2rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.alert-danger {
+  border: 1px solid coral;
+  border-radius: 1rem;
+  color: darkred;
+  font-weight: bold;
+  background: rgba(255, 0, 0, .1);
+}
