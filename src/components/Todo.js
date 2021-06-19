@@ -33,7 +33,7 @@ export const Todo = ({ id, text, completed }) => {
 
   return (
     <form
-      action={`/api/todos/${id}/state?redirect=true`}
+      action={`/action/todos/${id}/state`}
       method="post"
       className={styles.container}
     >

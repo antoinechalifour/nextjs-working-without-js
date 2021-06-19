@@ -11,7 +11,7 @@ export default function Home({ todos }) {
   return (
     <main className={`card page-content ${styles.container}`}>
       <nav>
-        <a href="/api/logout">Logout</a>
+        <a href="/action/logout">Logout</a>
       </nav>
 
       <h1>Your tasks for today</h1>

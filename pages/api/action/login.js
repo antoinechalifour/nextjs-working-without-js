@@ -7,8 +7,7 @@ export default function login(req, res) {
     const cookies = new Cookies(req, res);
     cookies.set("auth", "ok");
 
-    if (req.query.redirect) return res.redirect(302, "/");
-    else return res.json({ location: "/" });
+    return res.redirect(302, "/");
   }
 
   return res.redirect(302, "/login?invalid_credentials");

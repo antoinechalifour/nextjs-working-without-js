@@ -1,12 +1,8 @@
-import { saveTodo, todoOfId } from "../../../../src/server/todoSqliteRepository";
+import { toggleTodoState } from "../../../../src/server/toggleTodoState";
 
-export default async function toggleTodoState(req, res) {
-  const { id } = req.query;
-  const todo = await todoOfId(id);
-  todo.completed = req.body[id] === "on";
+export default async function toggleTodoStateEndpoint(req, res) {
+  const id = req.query.id
+  await toggleTodoState(id, req.body[id] === "on");
 
-  saveTodo(todo);
-
-  if (req.query.redirect) res.redirect(302, "/");
-  else res.json({ location: "/" });
+  res.json({ location: "/" });
 }

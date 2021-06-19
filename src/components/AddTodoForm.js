@@ -10,7 +10,7 @@ const useAddTodoForm = () => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const res = await fetch("/api/add-todo", {
+    const res = await fetch("/api/todos", {
       method: "POST",
       body: new URLSearchParams(formData),
     });
@@ -28,7 +28,7 @@ export const AddTodoForm = () => {
 
   return (
     <form
-      action="/api/add-todo?redirect=true"
+      action="/action/add-todo"
       method="post"
       onSubmit={handleSubmit}
       className={styles.container}
