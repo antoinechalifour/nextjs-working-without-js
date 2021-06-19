@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import { useEffect, useLayoutEffect, useState } from "react";
 
-import styles from "../../styles/Todo.module.css";
+import styles from "./Todo.module.css";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-export function Todo({ id, text, completed }) {
+const useTodo = (id) => {
   const router = useRouter();
   const [showSubmit, setShowSubmit] = useState(true);
 
@@ -24,6 +24,12 @@ export function Todo({ id, text, completed }) {
 
     await router.replace(body.location);
   };
+
+  return { handleChange, showSubmit };
+};
+
+export const Todo = ({ id, text, completed }) => {
+  const { handleChange, showSubmit } = useTodo(id);
 
   return (
     <form
@@ -45,4 +51,4 @@ export function Todo({ id, text, completed }) {
       {showSubmit && <button type="submit">Save</button>}
     </form>
   );
-}
+};

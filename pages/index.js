@@ -9,7 +9,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home({ todos }) {
   return (
-    <main className={styles.container}>
+    <main className={`card page-content ${styles.container}`}>
       <nav>
         <a href="/api/logout">Logout</a>
       </nav>

@@ -1,0 +1,16 @@
+.container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.container input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddf;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+}

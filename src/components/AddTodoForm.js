@@ -1,31 +1,46 @@
-import {useRouter} from 'next/router'
-import styles from '../../styles/AddTodoForm.module.css'
+import { useRouter } from "next/router";
 
-export function AddTodoForm() {
-    const router = useRouter()
+import { FormInput } from "./FormInput";
+import styles from "./AddTodoForm.module.css";
 
-    const handleSubmit = async e => {
-        e.preventDefault()
+const useAddTodoForm = () => {
+  const router = useRouter();
 
-        const formData = new FormData(e.target)    
-        const res = await fetch('/api/add-todo', {
-            method: 'POST',
-            body: new URLSearchParams(formData)
-        })
-        const body = await res.json()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        await router.replace(body.location)
-        e.target.reset()
-    }
+    const formData = new FormData(e.target);
+    const res = await fetch("/api/add-todo", {
+      method: "POST",
+      body: new URLSearchParams(formData),
+    });
+    const body = await res.json();
 
-    return (
-      <form action="/api/add-todo?redirect" method="post" onSubmit={handleSubmit} className={styles.container}>
-        <div>
-          <label htmlFor="todo">Add a todo</label>
-          <input type="text" name="todo" id="todo" placeholder="Buy some bread..." />
-        </div>
-  
-        <button type="submit">Add</button>
-      </form>
-    );
-  }
+    await router.replace(body.location);
+    e.target.reset();
+  };
+
+  return { handleSubmit };
+};
+
+export const AddTodoForm = () => {
+  const { handleSubmit } = useAddTodoForm();
+
+  return (
+    <form
+      action="/api/add-todo?redirect"
+      method="post"
+      onSubmit={handleSubmit}
+      className={styles.container}
+    >
+      <FormInput
+        label="Add a todo"
+        name="todo"
+        type="text"
+        placeholder="Buy some bread..."
+      />
+
+      <button type="submit">Add</button>
+    </form>
+  );
+};

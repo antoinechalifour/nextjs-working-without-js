@@ -1,0 +1,9 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 1rem;
+}
+
+.container button {
+  align-self: end;
+}

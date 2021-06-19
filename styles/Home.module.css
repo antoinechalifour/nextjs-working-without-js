@@ -1,13 +1,6 @@
 .container {
-  max-width: 450px;
-  margin: 4rem auto;
-  padding: 2rem;
-  border: 1px solid #ddf;
-  border-radius: 1rem;
   display: grid;
   grid-gap: 2rem;
-  
-  background: #fff;
 }
 
 .container h1 {

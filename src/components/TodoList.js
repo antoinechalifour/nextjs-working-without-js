@@ -1,14 +1,12 @@
 import { Todo } from "./Todo";
-import styles from "../../styles/TodoList.module.css";
+import styles from "./TodoList.module.css";
 
-export function TodoList({ todos }) {
-  return (
-    <ul className={styles.container}>
-      {todos.map((todo) => (
-        <li key={todo.id}>
-          <Todo {...todo} />
-        </li>
-      ))}
-    </ul>
-  );
-}
+export const TodoList = ({ todos }) => (
+  <ul className={styles.container}>
+    {todos.map((todo) => (
+      <li key={todo.id}>
+        <Todo {...todo} />
+      </li>
+    ))}
+  </ul>
+);
