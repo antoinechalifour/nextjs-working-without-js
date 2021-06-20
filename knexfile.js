@@ -3,9 +3,15 @@ const path = require('path')
 const DB_PATH = path.join(process.cwd(), "db.sqlite");
 
 module.exports = {
-  client: "sqlite3",
+  client: "pg",
   connection: {
-    filename: DB_PATH,
-  },
-  useNullAsDefault: true
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  }
 };
