@@ -1,0 +1,21 @@
+.container {
+  justify-self: end;
+}
+
+.container button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.container button > :last-child {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: dodgerblue;
+}

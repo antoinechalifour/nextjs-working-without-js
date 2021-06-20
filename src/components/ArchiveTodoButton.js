@@ -20,7 +20,7 @@ export const ArchiveTodoButton = ({ id }) => {
 
   return (
     <form
-      action={`/action/todos/${id}/delete`}
+      action={`/action/archive-todo?id=${id}`}
       method="post"
       className={styles.container}
       onSubmit={handleSubmit}

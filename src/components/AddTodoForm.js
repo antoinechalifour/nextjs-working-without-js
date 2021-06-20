@@ -24,7 +24,7 @@ export const AddTodoForm = () => {
 
   return (
     <form
-      action="/action/add-todo"
+      action="/action/submit-new-todo"
       method="post"
       onSubmit={handleSubmit}
       className={styles.container}
