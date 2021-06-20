@@ -20,7 +20,7 @@ export const TodoListForm = () => {
     >
       <button type="submit">
         <span>✔️</span>
-        <span>Valider les changements</span>
+        <span>Commit changes</span>
       </button>
     </form>
   );
