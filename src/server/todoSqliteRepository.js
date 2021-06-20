@@ -5,10 +5,11 @@ export function saveTodo(todo) {
 }
 
 export async function allTodos() {
-  const todos = await  knex.select("*").from("todos")
+  const todos = await  knex.select("*").from("todos").orderBy('created_at')
 
   return todos.map(todo => ({
-    ...todo,
+    id: todo.id,
+    text: todo.text,
     completed: !!todo.completed
   }));
 }

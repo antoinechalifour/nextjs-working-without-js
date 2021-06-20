@@ -1,9 +1,11 @@
 import Cookies from "cookies";
 
+const { AUTH_USER, AUTH_PASSWORD } = process.env;
+
 export default function login(req, res) {
   const { email, password } = req.body;
 
-  if (email === "antoine.chalifour@gmail.com" && password === "1234") {
+  if (email === AUTH_USER && password === AUTH_PASSWORD) {
     const cookies = new Cookies(req, res);
     cookies.set("auth", "ok");
 

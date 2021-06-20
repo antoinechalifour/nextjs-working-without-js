@@ -2,6 +2,8 @@ const path = require('path')
 
 const DB_PATH = path.join(process.cwd(), "db.sqlite");
 
+require('dotenv').config({ path: '.env.local' })
+
 module.exports = {
   client: "pg",
   connection: {

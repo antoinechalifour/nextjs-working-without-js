@@ -6,7 +6,7 @@ import styles from "./Todo.module.css";
 const useTodo = (id) => {
   const handleChange = async (e) => {
     const formData = new FormData();
-    formData.append(id, e.target.value)
+    formData.append(id, e.target.checked ? 'on' : 'off')
     
     await fetch(`/api/todos/${id}/state`, {
       method: "post",

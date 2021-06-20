@@ -4,6 +4,7 @@ exports.up = function(knex) {
       table.uuid('id').primary()
       table.string('text')
       table.boolean('completed')
+      table.timestamp('created_at').defaultTo(knex.fn.now());
   })
 };
 
